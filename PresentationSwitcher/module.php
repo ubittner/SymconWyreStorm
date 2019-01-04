@@ -80,6 +80,9 @@ class WyreStormPresentationSwitcher extends IPSModule
         // Rename instance
         $this->RenameInstance();
 
+        // Register profiles
+        $this->CreateSourcesProfile();
+
         // Register variables
         $this->RegisterVariableBoolean('Power', 'Power', '~Switch', 1);
         $this->EnableAction('Power');
@@ -88,9 +91,6 @@ class WyreStormPresentationSwitcher extends IPSModule
         $this->RegisterVariableInteger('Sources', $this->Translate('Available sources'), $profile, 2);
         $this->EnableAction('Sources');
         $this->SetValue('Sources', 1);
-
-        // Register profiles
-        $this->CreateSourcesProfile();
 
         // Set the visibility of the switching modes
         $this->SetSwitchingModes();
