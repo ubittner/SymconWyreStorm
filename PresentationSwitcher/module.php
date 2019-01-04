@@ -73,7 +73,7 @@ class WyreStormPresentationSwitcher extends IPSModule
         parent::ApplyChanges();
 
         // Check kernel runlevel
-        if (IPS_GetKernelRunlevel() <> KR_READY) {
+        if (IPS_GetKernelRunlevel() != KR_READY) {
             return;
         }
 
@@ -91,7 +91,6 @@ class WyreStormPresentationSwitcher extends IPSModule
 
         // Register profiles
         $this->CreateSourcesProfile();
-
 
         // Set the visibility of the switching modes
         $this->SetSwitchingModes();
@@ -153,7 +152,7 @@ class WyreStormPresentationSwitcher extends IPSModule
                 $clientSocketState = @IPS_GetInstance($clientSocket)['InstanceStatus'];
                 if ($clientSocketState == 102) {
                     // Send data to client socket
-                    $result = $this->SendDataToParent(json_encode(Array('DataID' => '{79827379-F36E-4ADA-8A95-5F8D1DC92FA9}', 'Buffer' => $data)));
+                    $result = $this->SendDataToParent(json_encode(['DataID' => '{79827379-F36E-4ADA-8A95-5F8D1DC92FA9}', 'Buffer' => $data]));
                 }
             }
         }
@@ -213,10 +212,10 @@ class WyreStormPresentationSwitcher extends IPSModule
         switch ($deviceModel) {
             case 'SW-0501-HDBT':
             case 'NHD-SW-0501':
-                $sourceNames = array('1' => 'HDMI1', '2' => 'HDMI2', '3' => 'HDMI3', '4' => 'HDMI4', '5' => 'VGA1');
+                $sourceNames = ['1' => 'HDMI1', '2' => 'HDMI2', '3' => 'HDMI3', '4' => 'HDMI4', '5' => 'VGA1'];
                 break;
             case 'SW-1001-HDBT':
-                $sourceNames = array('1' => 'HDMI1', '2' => 'HDMI2', '3' => 'HDMI3', '4' => 'HDMI4', '5' => 'HDMI5', '6' => 'HDMI6', '7' => 'DP', '8' => 'VGA1', '9' => 'VGA2', '10' => 'HDBT');
+                $sourceNames = ['1' => 'HDMI1', '2' => 'HDMI2', '3' => 'HDMI3', '4' => 'HDMI4', '5' => 'HDMI5', '6' => 'HDMI6', '7' => 'DP', '8' => 'VGA1', '9' => 'VGA2', '10' => 'HDBT'];
                 break;
             default:
                 $sourceNames = null;
@@ -224,7 +223,7 @@ class WyreStormPresentationSwitcher extends IPSModule
         if (!is_null($sourceNames)) {
             $availableSources = [];
             foreach ($sourceNames as $key => $sourceName) {
-                array_push($availableSources, array('Position' => $key, 'Source' => $sourceName, 'Description' => $sourceName));
+                array_push($availableSources, ['Position' => $key, 'Source' => $sourceName, 'Description' => $sourceName]);
             }
             // Update available sources
             $json = json_encode($availableSources);
@@ -236,8 +235,7 @@ class WyreStormPresentationSwitcher extends IPSModule
     }
 
     /**
-     * Creates the profile for available audio sources
-     *
+     * Creates the profile for available audio sources.
      */
     protected function CreateSourcesProfile()
     {
@@ -304,7 +302,7 @@ class WyreStormPresentationSwitcher extends IPSModule
                     $rowColor = '#FFC0C0';
                     $status = false;
                 }
-                $formData->elements[2]->items[1]->values[] = array('Position' => $currentArray->Position, 'Source' => $currentArray->Source, 'Description' => $currentArray->Description, 'rowColor' => $rowColor);
+                $formData->elements[2]->items[1]->values[] = ['Position' => $currentArray->Position, 'Source' => $currentArray->Source, 'Description' => $currentArray->Description, 'rowColor' => $rowColor];
                 if ($status == false) {
                     $this->SetStatus(201);
                 } else {
