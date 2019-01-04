@@ -1,0 +1,43 @@
+{
+  "translations": {
+    "de": {
+      "(0) Instance information": "(0) Instanzinformationen",
+      "Module:\t\t\tWyreStorm PresentationSwitcher": "Modul:\t\t\tWyreStorm PresentationSwitcher",
+      "Description:\t\tThis instance controls a WyreStorm Presentation Switcher": "Beschreibung:\tDiese Instanz steuert einen WyreStorm Presentation Switcher",
+      "Symcon version:\t5.00": "Symcon Version:\t5.00",
+      "Module version:\t1.00-1": "Modul Version:\t1.00-1",
+      "Date:\t\t\tJanuary 03, 2019": "Datum:\t\t\t03. Januar 2019",
+      "Time:\t\t\t10:00": "Uhrzeit:\t\t\t10:00",
+      "Developer:\t\tUlrich Bittner": "Entwickler:\t\tUlrich Bittner",
+      "Project:\t\t\tA joint project of Normen Thiel and Ulrich Bittner": "Projekt:\t\t\tEin Gemeinschaftsprojekt von Normen Thiel und Ulrich Bittner",
+      "Prefix:\t\t\tUBWSPS": "Präfix:\t\t\tUBWSPS",
+      "(1) General settings": "(1) Allgemeine Einstellungen",
+      "Enter a unique device name for your presentation switcher": "Geben Sie eine eindeutige Gerätebezeichnung an",
+      "Device designation": "Gerätebezeichnung",
+      "Please select your presentation switcher model": "Wählen Sie das vorhandene Gerätemodell aus",
+      "Device model": "Gerätemodell",
+      "Please select": "Bitte auswählen",
+      "Select whether to log received data": "Wählen Sie aus, ob empfangene Daten protokolliert werden sollen",
+      "Log received data": "Protokollieren von Empfangsdaten",
+      "Select the functions to be displayed": "Wählen Sie die Funktionen aus, welche angezeigt werden sollen",
+      "Source selection": "Quellenauswahl",
+      "(2) Sources": "(2) Quellen",
+      "Add the sources you want to use or delete entries that are not used anymore": "Fügen Sie die Quellen hinzu, die Sie verwenden möchten oder löschen Sie nicht mehr benötigte Einträge",
+      "Available Sources": "Verfügbare Quellen",
+      "Source": "Quelle",
+      "Description": "Beschreibung",
+      "Manual": "Anleitung",
+      "Manual login": "Manueller Login",
+      "Reboot device": "Gerät neu starten",
+      "Add standard sources": "Standard Quellen hinzufügen",
+      "Decrease Volume (-)": "Lautstärke verringern (-)",
+      "Increase Volume (+)": "Lautstärke erhöhen (+)",
+      "WyreStorm PresentationSwitcher will be created": "WyreStorm PresentationSwitcher wird erstellt",
+      "WyreStorm PresentationSwitcher is active": "WyreStorm PresentationSwitcher ist aktiv",
+      "WyreStorm PresentationSwitcher will be deleted": "WyreStorm PresentationSwitcher wird gelöscht",
+      "WyreStorm PresentationSwitcher is inactive": "WyreStorm PresentationSwitcher ist inaktiv",
+      "WyreStorm PresentationSwitcher has an error": "WyreStorm PresentationSwitcher hat einen Fehler",
+      "Available sources": "Verfügbare Quellen"
+    }
+  }
+}

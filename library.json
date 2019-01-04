@@ -1,0 +1,13 @@
+{
+  "id": "{DF93493B-5880-CC8B-4EF6-267D7DB9DCE2}",
+  "author": "Ulrich Bittner",
+  "name": "WyreStorm",
+  "url": "https://wyrestorm.com/",
+  "compatibility": {
+    "version": "5.0",
+    "date": 1491343200
+  },
+  "version": "1.0",
+  "build": 1,
+  "date": 1546506000
+}

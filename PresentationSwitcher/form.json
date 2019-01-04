@@ -1,0 +1,289 @@
+{
+  "elements": [
+    {
+      "type": "ExpansionPanel",
+      "caption": "(0) Instance information",
+      "items": [
+        {
+          "type": "Label",
+          "caption": "Module:\t\t\tWyreStorm PresentationSwitcher"
+        },
+        {
+          "type": "Label",
+          "caption": "Description:\t\tThis instance controls a WyreStorm Presentation Switcher"
+        },
+        {
+          "type": "Label",
+          "caption": "Symcon version:\t5.00"
+        },
+        {
+          "type": "Label",
+          "caption": "Module version:\t1.00-1"
+        },
+        {
+          "type": "Label",
+          "caption": "Date:\t\t\tJanuary 03, 2019"
+        },
+        {
+          "type": "Label",
+          "caption": "Time:\t\t\t10:00"
+        },
+        {
+          "type": "Label",
+          "caption": "Developer:\t\tUlrich Bittner"
+        },
+        {
+          "type": "Label",
+          "caption": "Project:\t\t\tA joint project of Normen Thiel and Ulrich Bittner"
+        },
+        {
+          "type": "Label",
+          "caption": "Prefix:\t\t\tUBWSPS"
+        }
+      ]
+    },
+    {
+      "type": "ExpansionPanel",
+      "caption": "(1) General settings",
+      "items": [
+        {
+          "type": "Label",
+          "caption": "Enter a unique device name for your presentation switcher"
+        },
+        {
+          "type": "ValidationTextBox",
+          "name": "DeviceDesignation",
+          "caption": "Device designation"
+        },
+        {
+          "type": "Label",
+          "caption": "Please select your presentation switcher model"
+        },
+        {
+          "type": "Select",
+          "name": "DeviceModel",
+          "caption": "Device model",
+          "options": [
+            {
+              "caption": "Please select",
+              "value": "Please select"
+            },
+            {
+              "caption": "SW-0501-HDBT",
+              "value": "SW-0501-HDBT"
+            },
+            {
+              "caption": "NHD-SW-0501",
+              "value": "NHD-SW-0501"
+            },
+            {
+              "caption": "SW-1001-HDBT",
+              "value": "SW-1001-HDBT"
+            }
+          ]
+        },
+        {
+          "type": "Label",
+          "caption": "Select whether to log received data"
+        },
+        {
+          "type": "CheckBox",
+          "name": "LogReceiveData",
+          "caption": "Log received data"
+        },
+        {
+          "type": "Label",
+          "caption": "Select the functions to be displayed"
+        },
+        {
+          "type": "CheckBox",
+          "name": "EnablePowerSwitch",
+          "caption": "Power"
+        },
+        {
+          "type": "CheckBox",
+          "name": "EnableSourceSelection",
+          "caption": "Source selection"
+        }
+      ]
+    },
+    {
+      "type": "ExpansionPanel",
+      "caption": "(2) Sources",
+      "items": [
+        {
+          "type": "Label",
+          "caption": "Add the sources you want to use or delete entries that are not used anymore"
+        },
+        {
+          "type": "List",
+          "name": "SourceList",
+          "caption": "Available Sources",
+          "rowCount": 10,
+          "add": true,
+          "delete": true,
+          "sort": {
+            "column": "Position",
+            "direction": "ascending"
+          },
+          "columns": [
+            {
+              "caption": "Position",
+              "name": "Position",
+              "width": "100px",
+              "add": 1,
+              "edit": {
+                "type": "ValidationTextBox"
+              }
+            },
+            {
+              "name": "Source",
+              "caption": "Source",
+              "width": "150px",
+              "add": "Please select",
+              "edit": {
+                "type": "Select",
+                "options": [
+                  {
+                    "caption": "Please select",
+                    "value": "Please select"
+                  },
+                  {
+                    "caption": "HDMI 1",
+                    "value": "HDMI1"
+                  },
+                  {
+                    "caption": "HDMI 2",
+                    "value": "HDMI2"
+                  },
+                  {
+                    "caption": "HDMI 3",
+                    "value": "HDMI3"
+                  },
+                  {
+                    "caption": "HDMI 4",
+                    "value": "HDMI4"
+                  },
+                  {
+                    "caption": "HDMI 5",
+                    "value": "HDMI5"
+                  },
+                  {
+                    "caption": "HDMI 6",
+                    "value": "HDMI6"
+                  },
+                  {
+                    "caption": "DP",
+                    "value": "DP"
+                  },
+                  {
+                    "caption": "VGA 1",
+                    "value": "VGA1"
+                  },
+                  {
+                    "caption": "VGA 2",
+                    "value": "VGA2"
+                  },
+                  {
+                    "caption": "HDBT",
+                    "value": "HDBT"
+                  }
+                ]
+              }
+            },
+            {
+              "caption": "Description",
+              "name": "Description",
+              "width": "auto",
+              "add": "",
+              "edit": {
+                "type": "ValidationTextBox"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Label",
+      "caption": "(0) Instance information"
+    },
+    {
+      "type": "Button",
+      "caption": "Manual",
+      "onClick": "echo 'https://github.com/ubittner/SymconWyreStorm';"
+    },
+    {
+      "type": "Label",
+      "caption": "(1) General settings"
+    },
+    {
+      "type": "RowLayout",
+      "items": [
+        {
+          "type": "Button",
+          "caption": "Manual login",
+          "onClick": "UBWSPS_DeviceLogin($id);"
+        },
+        {
+          "type": "Button",
+          "caption": "Reboot device",
+          "onClick": "UBWSPS_RebootDevice($id);"
+        }
+      ]
+    },
+    {
+      "type": "Label",
+      "caption": "(2) Sources"
+    },
+    {
+      "type": "Button",
+      "caption": "Add standard sources",
+      "onClick": "UBWSPS_AddStandardSources($id);"
+    },
+    {
+      "type": "RowLayout",
+      "items": [
+        {
+          "type": "Button",
+          "caption": "Decrease Volume (-)",
+          "onClick": "UBWSPS_DecreaseDeviceVolumeIncremental($id);"
+        },
+        {
+          "type": "Button",
+          "caption": "Increase Volume (+)",
+          "onClick": "UBWSPS_IncreaseDeviceVolumeIncremental($id);"
+        }
+      ]
+    }
+  ],
+  "status": [
+    {
+      "code": 101,
+      "icon": "active",
+      "caption": "WyreStorm PresentationSwitcher will be created"
+    },
+    {
+      "code": 102,
+      "icon": "active",
+      "caption": "WyreStorm PresentationSwitcher is active"
+    },
+    {
+      "code": 103,
+      "icon": "active",
+      "caption": "WyreStorm PresentationSwitcher will be deleted"
+    },
+    {
+      "code": 104,
+      "icon": "inactive",
+      "caption": "WyreStorm PresentationSwitcher is inactive"
+    },
+    {
+      "code": 201,
+      "icon": "inactive",
+      "caption": "WyreStorm PresentationSwitcher has an error"
+    }
+  ]
+}
